@@ -1,0 +1,92 @@
+/*Order form*/
+@import "Params.scss";
+.orderFormLayout {
+    position: relative;
+    width: 390px;
+
+}
+.content__orderForm {
+    margin: 20px auto;
+    background-image: url("../img/Symbol/card-form.gif");
+    background-repeat: no-repeat;
+    width: 390px;
+    height: 204px;
+}
+.orderForm{        
+        &__line1, &__line2, &__line3, &__line4, &__line5, &__lineValid{
+    position: relative;
+        }
+        &__line1 {
+          top: 45px;
+          left: 17px;
+          width: 270px; }
+        &__line2 {
+          top: 50px;
+          left: 88px; }
+        &__line3 {
+          top: 60px;
+          left: 26px; }
+        &__line4 {
+          top: -15px;
+          left: 308.5px; }
+        &__line5 {
+          z-index: 1;
+          width: 100px;
+          top: 70px;
+          margin: 10px auto; }
+        &__lineValid {
+          font-size: 12px;
+          top: 45px;
+          left: 99px;
+          margin-right: 31px; }
+    
+        &__line1 input, &__line4 input, &__line2 select {
+          width: 60px;
+          height: 30px;
+          text-align: center; }
+        &__line3 input {
+          width: 250px;
+          height: 20px;
+          text-align: center; }
+        &__line5 input {
+          z-index: 1;
+          border: none;
+          border-radius: 20px;
+          width: 100px;
+          height: 50px;
+          text-align: center; }
+        &__finish-btn{
+            @include order-btn;
+        }
+    }
+@media screen and (max-width: 666px) {
+    .orderForm {
+        &__line1 input,
+        &__line4 input,
+        &__line2 select {
+            width: 45px;
+            height: 22px;}
+        &__line3 input {
+            width: 192px;
+            height:18px;}
+       }
+    .orderForm{
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 315px;
+        height: 168px;
+        margin-bottom: 50px;
+        margin-top: 70px;
+            &__line2 {
+            left: 74px;
+            top: 45px;}
+            &__line3 {
+            top: 52px;
+            left: 26px;}
+            &__line4 {
+            left: 249.5px;}
+            &__lineValid {
+            left: 81px;
+            margin-right: 20px;}
+    } 
+}

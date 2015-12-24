@@ -1,0 +1,53 @@
+/*Login*/
+.modal-dialog__login-form {
+    margin: 10% auto;
+    position: absolute;
+    left: 50%;
+    width: 300px;
+    margin-left: -150px;
+    min-height: 200px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    z-index: 6;
+}
+.login-form {
+  padding: 20px 40px 35px 40px;
+  background: #fff; 
+    &__close{
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  width: 1.3em;
+  padding: 1px 1px 1px 2px;
+  text-decoration: none;
+  text-align: center;
+  background: burlywood;
+  color: black;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); }
+  &__input {
+  padding: 3px;
+  width: 217px;
+  margin-bottom: 7px;
+  border-radius: 4px;
+  border: 2px solid darkblue; }
+    &__remember-me {
+  width: 15px; }
+    &__register {
+  float: right; }
+    &__header {
+  text-align: center;
+  padding-bottom: 2px; }    
+}
+@media screen and (max-width: 666px) {
+    .login-form {
+        padding: 20px 40px 35px;
+        width: 94%;
+        height: 100%;
+        &__input {
+        padding: 8px;
+        width: 100%;
+        }
+    } 
+}   

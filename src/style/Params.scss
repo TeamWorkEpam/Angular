@@ -1,0 +1,21 @@
+@mixin order-btn{
+    text-align: center;
+    text-decoration: none;
+    margin-top: 20px;
+    padding: 10px 16px;
+    border: 1px solid #70b61f;
+    border-radius: 20px;
+    background: #7dcc23;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;    
+    max-width: 224px;
+}
+
+@-webkit-keyframes movie {
+  50% {
+    font-size: 25px;
+    box-shadow: 0 0px 50px rgba(0, 0, 0, 0.5); }
+  100% {
+    font-size: 18px;
+    box-shadow: 0 0px 0px transparent; } }

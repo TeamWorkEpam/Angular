@@ -1,0 +1,236 @@
+
+.elementspage__figcaption {
+    font-size: 14px;
+}
+.pages__items:hover {
+    animation: none;
+    border: 1px solid #000;
+    color: orange;
+    font-size: 14px;
+}
+/*Pages Category items*/
+/*-------------------Start not BEM notaion for items list page-------------*/
+.elementsPage {
+    padding-top: 70px;
+    width: 90%;
+    float: right; }
+
+.itemsContent {
+  margin: auto;
+  position: relative;
+  padding-bottom: 40px;
+  width: 80%; }
+
+.viewList {
+  text-align: right;
+  margin-right: 20px;
+  margin-top: 10px; }
+
+/*Main path*/
+nav, .itemsContent {
+  vertical-align: top; }
+
+.itemsContent a {
+  text-decoration: none; }
+
+.itemsContent a:link {
+  color: black; }
+
+.itemsContent a:visited {
+  color: blue; }
+
+.itemsContent a:hover {
+  color: orange; }
+
+.itemsContent a:active {
+  color: red; }
+
+.square {
+  vertical-align: top;
+  width: 30%;
+  display: inline-block;
+  height: 200px;
+  text-align: center;
+  font-size: 12px;
+  float: left; }
+
+.squareElementInclude {
+  width: 100%;
+  height: 180px;
+  clear: both; }
+
+.squareElementInclude a {
+  width: 80%;
+  display: inline-block;
+  clear: both; }
+
+.imgItem {
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.imgItemList {
+  height: 150px;
+  width: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: auto;
+  float: left; }
+.motherLinkProperties {
+  display: inline-block;
+  white-space: nowrap;
+  height: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 150px; }
+.squareList .motherLinkProperties {
+  margin-left: 0; }
+/*-------------Finish not BEM notaion-------------------*/
+
+.elementspagelink__inform {    
+    display: inline-block;  
+    width: 70%;
+}
+
+.elementspagelink__inform--style {
+    text-align: left;
+    padding-top: 7px;
+}
+.listprice {
+  display: inline-block;  
+}
+
+.listprice--style {
+    float: right;
+    font-size: 18px;
+}
+
+.itemsinfo {  
+  height: 30px;
+  margin-top: 5px;}
+
+.itemsinfo--syle {
+  font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;  
+}
+
+.elementspagelink__addcartitem {
+  
+  width: 80%; }
+
+.elementspagelink__addcartitem--style {
+    text-align: center;
+    border: 1px solid #70b61f;
+    border-radius: 15px;
+    background: #7dcc23;
+    color: white;
+    font-weight: bold;
+    font-size: 25px; 
+    margin-left: 60px;
+}
+
+/*----------------------------------------Grid View------------------------------*/
+.elementspage {
+  width: 90%;
+  float: right;
+  margin-bottom: 70px; }
+
+.elementspage--style, .cartpage--style {
+  padding-top: 70px; }
+
+.elementspagelist:after, .elementspagelink__inform:after, .cartpage__carttotal:after {
+  display: block;
+  content: '';
+  clear: both; }
+
+/*Items*/
+.elementspagelink {
+  text-decoration: none;
+    width: 80%;    
+}
+
+.elementspagelink:link {
+  color: black; }
+
+.elementspagelink--style {  
+  display: inline-block;
+  clear: both; }
+
+.elementspagelink:visited {
+  color: blue; }
+
+.elementspagelink:hover {
+  color: orange; }
+
+.elementspagelink:active {
+  color: red; }
+
+.elementspagelink__img {
+  content: "";
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.elementspagelink__img--img1 {
+  background-image: url("../img/motherboard/Gigabyte/GIGABYTE%20GA-78LMT-S2.jpg"); }
+
+.elementspagelink__img--img2 {
+    background-image: url("../img/motherboard/Gigabyte/GIGABYTE%20GA-990FXA-UD5.jpg");
+}
+.elementspagelink__img--img3 {
+    background-image: url("../img/motherboard/Gigabyte/GIGABYTE%20GA-B85-HD3.jpg");
+}
+.elementspagelink__img--img4 {
+    background-image: url("../img/motherboard/Gigabyte/GIGABYTE%20GA-H81M-S2PV.jpg");
+}
+
+/*----------------------------------------List View-------------------------------*/
+.elementspagelist {
+  width: 500px;  
+  margin: auto; 
+}
+
+.elementspagelist--style {
+  vertical-align: top;
+  text-align: center;
+  font-size: 12px; }
+
+.linkproperties {
+    display: inline-block;
+    width: 70%;  
+    font-size: 18px;
+    white-space: nowrap;    
+}
+
+.elementspagelink__imglist {
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;   
+    background-position: center;
+}
+
+.elementspagelist__list {
+    text-decoration: none;
+    width: 30%;
+    float: left;
+}
+
+
+
+
+.background{
+    background: aqua;
+}
+
+#card1-error, #card2-error, #card3-error, #card4-error {
+    position: absolute;
+    top: -75px;
+    display: block;
+}
+
+@import 'app.scss';

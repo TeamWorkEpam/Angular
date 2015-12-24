@@ -1,0 +1,306 @@
+@import "Params.scss";
+									/*Cart page*/
+/*Total*/
+.cart { 
+	width: 100%;
+	display: flex;
+	flex-direction: column-reverse;
+    &__section {        
+        padding-top: 20px;
+        width: 100%;
+        padding-bottom: 30px;
+    }
+    &__item {        
+        width: 95%;
+        margin: auto;
+		margin-bottom: 10px;
+    }
+    &__totalbar {       
+        width: 100%;
+        padding-top: 30px;
+    }
+	&-quant {
+		display: inline-block;
+	  	font-size: 16px;
+	  	vertical-align: top;
+	  	margin-right: 10px;
+		
+	}
+
+	&-input { 
+		display: inline-block;
+		&__value {
+		  width: 35px;  
+		  font-size: 12px;
+		  vertical-align: top;
+		}
+	}
+
+	&-priceview {
+		vertical-align: top;
+		display: inline-block;
+		padding-left: 10px;
+	  	font-size: 16px; 	  
+	}
+	
+	&-options {
+		width: 100%;
+		text-align: right;
+	}
+	
+	&-options:after {
+		display: block;
+		content: '';
+		clear: both;
+	}
+}
+
+.totalbar {
+	&__title, &__price, &__countitems {        
+       	text-align: center;
+    }
+		
+	&__countitems {        
+		font-size: 16px;
+		color: grey;
+	}
+		
+	&__title {
+	   font-size: 30px; 
+	}
+		
+	&__price {
+		margin-bottom: 10px;
+		font-size: 25px;
+	}
+		
+	&__pay {		
+		.tocheckout {
+			margin: auto;
+			text-align: center;
+		}
+	}
+		
+	&__link {
+    	text-decoration: none;
+	}
+}
+
+.tocheckout {
+	@include order-btn;
+	margin: auto;
+	text-align: center;
+}
+
+/*Table*/
+.itemscart {  
+    &__cellview {
+		display: flex;
+        border: 2px solid black;        
+        text-align: center;
+    }
+    &__boximg { 
+		margin-top: 3%;
+        width: 15%;        
+    }
+    &__imglink {
+		width: 100%;
+		display: inline-block;
+    }
+	
+	&__description {
+		display: flex;
+	  	width: 75%;
+	  	margin-top: 3%;
+	  	font-size: 30px;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		
+		&-count {
+			width: 70%;			
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+			padding-right: 5px;
+		}
+	}
+	
+	&__linkprop {
+		width: 25%;
+		&--style {			
+			font-size: 16px;
+			white-space: nowrap;			
+			overflow: hidden;    
+			text-overflow: ellipsis;
+			text-align: left;
+		}
+	}
+	&__link {
+		display: inline-block;
+		width:100%;
+		&:link {
+			color: black; 
+		}
+		
+		&:visited {
+			color: blue; 
+		}
+		
+		&:hover {
+			color: darkorange;	  		
+		}
+		
+		&:active {
+	  		color: red; 
+		}
+	}
+}
+
+.imgitemcart {
+  	width: 100%;
+  	height: 70px;
+  	background-size: contain;
+  	background-repeat: no-repeat;	
+ }
+
+.itemremove {	
+	align-self: flex-end;
+	padding-top: 4px;
+	height: 30px;	
+	font-size: 15px;	  
+}
+
+/*Total Table*/
+.totalpricetable {
+  width: 80%;
+  margin: 5px auto;
+  text-align: center;  
+  font-size: 30px; }
+
+.paytable {       
+    margin: 5px auto;
+}
+
+.cartpage__carttotal {
+    width: 90%;
+    margin: auto;
+	margin-top: 20px;
+}
+
+@media screen and (min-width: 480px) {
+	.cart { 		
+		flex-direction: row;
+		&__section {
+			width: 70%;			
+		}		
+		&__totalbar {
+			padding-top: 20px;
+			width: 30%;
+		}
+		&-quant { 
+			display: inline-block;
+			text-align: center;
+			font-size: 16px;
+			vertical-align: top;
+			margin-right: 10px;
+		}
+		&-input {
+			display: inline-block;
+			
+		}
+		&-priceview {
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+
+	.totalbar {
+		&__link {
+			display: inline-block;
+			vertical-align: top;
+			
+			.tocheckout {
+				font-size: 18px;
+			}
+		}
+		
+		
+		
+		&__pay {
+			text-align: center;
+			.tocheckout {				
+				font-size: 18px;
+			}
+		}
+	}
+
+	/*Table*/
+	.itemscart {  
+		&__cellview {
+			display: flex;
+			border: 2px solid black;        
+			text-align: center;
+		}
+		&__boximg { 
+			margin-top: 10px;
+			width: 15%;
+		}
+		&__imglink {
+			width: 100%;
+			display: inline-block;
+		}
+
+		&__description {
+			display: flex;
+			width: 80%;
+			margin-top: 10px;
+			font-size: 30px;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			&-count {
+				width: 65%;			
+				display: block;				
+				padding-right: 5px;
+				text-align: end;
+			}
+		}
+
+		&__linkprop {
+			width: 30%;
+			&--style {			
+				font-size: 16px;			
+			}
+		}
+	}
+	
+	.itemremove {	
+		display: block;
+		padding-top: 4px;
+		height: 30px;	
+		font-size: 15px;	  
+	}
+	
+	.totalpricetable {
+		width: 90%;
+		text-align: right;
+	}
+	
+	.paytable {		
+		display: inline-block;
+    	margin: 5px;
+		float: right;
+	}	
+}
+
+@media screen and (min-width: 800px) {
+	.itemscart {
+		&__boximg {			
+			width: 8%;
+		}
+		
+		&__description {
+			width: 85%;
+		}
+	}
+}

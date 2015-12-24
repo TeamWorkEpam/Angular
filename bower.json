@@ -1,0 +1,25 @@
+{
+  "name": "123",
+  "description": "test",
+  "main": "canvas.js",
+  "authors": [
+    "VladislavSolodjankin <Vladislav_Solodjankin@epam.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/TeamWorkEpam/Shop",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "react": "~0.14.3",
+    "react-router": "~1.0.0",
+    "eventEmitter": "~4.3.0"
+  }
+}

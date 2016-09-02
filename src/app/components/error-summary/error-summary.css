@@ -1,0 +1,15 @@
+.error-block {
+	display: flex;
+	margin-bottom: 10px;
+	justify-content: center;
+	&__error-message {
+		position: relative;
+		color: #911;
+		background-color: #fcdede;
+		border-color: #d2b2b2;
+		border-style: solid;
+		border-width: 1px;
+		z-index: 10;
+		border-radius: 3px;
+	}
+}

@@ -1,0 +1,66 @@
+<notification [notification]="notification"
+              (action)="backToCourses($event)"
+></notification>
+<form
+        class="course-form"
+        *ngIf="item"
+        [formGroup]="courseForm"
+        (ngSubmit)="onSubmit()">
+    <div class="course-form__control">
+        <label class="course-form__label">
+            Название курса
+        </label>
+        <input formControlName="name"
+               [(ngModel)]="item.name"
+        />
+        <div *ngIf="courseForm.controls.name.hasError('required')" class="error-block__error-message">
+            *required
+        </div>
+    </div>
+    <div class="course-form__control">
+        <label class="course-form__label">
+            Описание курса
+        </label>
+        <textarea type="text" formControlName="description" [(ngModel)]="item.description"
+        ></textarea>
+        <div *ngIf="courseForm.controls.description.hasError('required')" class="error-block__error-message">
+            *required
+        </div>
+    </div>
+    <div class="course-form__control">
+        <label class="course-form__label">
+            Продолжителность
+        </label>
+        <input formControlName="duration" [(ngModel)]="item.duration"
+               only-numbers
+        />
+        <div *ngIf="courseForm.controls.duration.hasError('required')" class="error-block__error-message">
+            *required
+        </div>
+        <span>{{item.duration | duratioFormat}}</span>
+    </div>
+    <div class="course-form__control">
+        <label class="course-form__label--date">
+            Дата
+        </label>
+        <input formControlName="date"
+               only-numbers
+               value="{{ item.date | dateFormat: format }}"
+        />
+        <div *ngIf="courseForm.controls.date.hasError('validateDate')" class="error-block__error-message">
+            Неправильный формат даты {{format}}
+        </div>
+        <div *ngIf="courseForm.controls.date.hasError('required')" class="error-block__error-message">
+            Неправильный формат даты {{format}}
+        </div>
+    </div>
+    <div class="course-form__control" >
+        <button class="form__button"
+                *ngFor="let action of courseActions"
+                (click)="action.action == 'back' ? openNotification() : null "
+                type="{{action.type}}">
+            {{action.name}}
+        </button>
+    </div>
+
+</form>

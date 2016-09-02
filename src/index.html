@@ -1,56 +1,38 @@
-<!DOCTYPE HTML>
-<html ng-app="categoriesListApp">
+<!DOCTYPE html>
+<html lang="">
 <head>
-	<meta charset="utf-8">
-    <link rel="icon" href="img/Symbol/4.gif">
-    <title>Home page</title>
-	<link rel="stylesheet"  href="style/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <script src="libs/angular.min.js"></script>
-    <script src="JS/app.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title><%= webpackConfig.metadata.title %></title>
+
+  <meta name="description" content="<%= webpackConfig.metadata.title %>">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+  <% if (webpackConfig.htmlElements.headTags) { %>
+  <!-- Configured Head Tags  -->
+  <%= webpackConfig.htmlElements.headTags %>
+  <% } %>
+
+  <!-- base url -->
+  <base href="<%= webpackConfig.metadata.baseUrl %>">
+
+
 </head>
-<body ng-controller="categoriesListCtrl">    
-    <div id="page">
-        <div class="page">
-            <div class="page__header"> 
-                <header class="header">   
-                    <a class="header__element header__element--logo" href="/">
-                    </a>
-                    <a class="header__element header__element--authorization ">
-                        <span class="header-element__authorization--img">
-                        </span>
-                        <span class="header-element__text--hidden">
-                            Profile
-                        </span>
-                    </a>
-                    <a class="header__element header__element--basket " href="CartPage.html">
-                        <span class="header-element__basket--img">
-                        </span>
-                        <span class="header-element__text--hidden">
-                            Cart
-                        </span>
-                    </a>
-                    <Search />
-                </header>
-            </div>
-            <div class="page__content"> 
-                <article class="content">
-                  <ul class="content__categories categories" id="tab-content">
-                    <li class="categories__layoutCategories" ng-repeat="category in data.categories">
-                    <a class="category" href={{category.name}} >
-                <figure>       
-                    <div class={{'img'+category.name}}></div>
-                    <figcaption>{{category.name}}</figcaption>
-                </figure>
-                </a>
-        </li>
-                   </ul>
-                </article>
-            </div>
-                    <div class="page__footer"> 
-                        <footer class="footer">© 2015 Powered by Footerist</footer>
-                    </div>
-        </div>
-    </div>
+
+<body>
+
+  <app>
+    Loading...
+  </app>
+
+
+  <% if (webpackConfig.metadata.isDevServer && webpackConfig.metadata.HMR !== true) { %>
+  <!-- Webpack Dev Server reload -->
+  <script src="/webpack-dev-server.js"></script>
+  <% } %>
+
+
 </body>
 </html>

@@ -1,0 +1,10 @@
+<h1>Course Details</h1>
+
+<course-form
+        *ngIf="item"
+        [item]="item"
+        [componentAction]="'add'"
+        (back)="goToList($event)"
+        (edit)="updateCourse($event)"
+        [courseActions]="courseActions">
+</course-form>

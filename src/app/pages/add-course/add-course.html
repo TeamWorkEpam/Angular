@@ -1,0 +1,9 @@
+<error-summary [errors]="formErrors">
+</error-summary>
+<course-form
+        [item]="item"
+        [componentAction]="'add'"
+        (back)="gotoList($event)"
+        (add)="addCourse($event)"
+        [courseActions]="courseActions">
+</course-form>

@@ -1,0 +1,6 @@
+.breadcrumbs {
+    &__item:after {
+        content: '=>';
+        display: inline-block;
+    }
+}

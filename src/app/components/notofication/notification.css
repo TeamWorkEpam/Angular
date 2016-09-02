@@ -1,0 +1,28 @@
+.notification-backdrop {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: .5;
+    z-index: 1040;
+    background-color: #000;
+}
+
+.notification {
+    &__inner {
+        z-index: 1050;
+        background: white;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 600px;
+        margin-left: -300px;
+        -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
+        box-shadow: 0 5px 15px rgba(0,0,0,.5);
+        color: black;
+    }
+}

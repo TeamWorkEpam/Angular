@@ -1,0 +1,37 @@
+.course-form {
+    margin-bottom: 10px;
+
+
+    &__control {
+        margin-bottom: 10px;
+        height: auto;
+    }
+    &__label {
+        display: inline-block;
+
+        &--date {
+            position: relative;
+        }
+    }
+    textarea {
+        height: 50px;
+        width: 400px;
+    }
+}
+.form {
+    &__button {
+        min-width: 200px;
+        height: 50px;
+        margin-right: 10px;
+    }
+}
+
+.ng-valid {
+    border-color: blue;
+}
+
+.ng-invalid {
+    border-color: red;
+}
+
+

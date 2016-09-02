@@ -1,0 +1,33 @@
+.course {
+	border: 1px solid #1c94c4;
+	border-radius: 5px;
+	padding: 5px;
+	margin-bottom: 10px;
+    &__name {
+		flex: 1;
+	}
+	&__description {
+		max-width: 70%;
+	}
+	&__item {
+		text-decoration: line-through;
+	}
+}
+.course:after {
+	display: block;
+	content: '';
+	clear: both;
+}
+
+.right {
+	width: 15%;
+	float: right;
+
+	button {
+		margin-bottom: 10px;
+	}
+}
+.left {
+	width: 85%;
+	float: left;
+}

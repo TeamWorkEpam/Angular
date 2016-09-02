@@ -1,0 +1,32 @@
+<form novalidate
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+      class="login-form">
+    <error-summary [errors]="errors"></error-summary>
+    <div class="login-form__control">
+        <label class="login-form__label">Login</label>
+        <input autofocus class="login-form__input" formControlName="login"
+               type="text"
+               [(ngModel)]="login"/>
+        <div class="error-block">
+            <div *ngIf="loginForm.controls.login.hasError('pattern')" class="error-block__error-message">
+                Поле «Логин» может содержать, латинские буквы и цифры.
+            </div>
+        </div>
+    </div>
+    <div class="login-form__control">
+        <label class="login-form__label">Password</label>
+        <input class="login-form__input" formControlName="password"
+               type="text"
+               [(ngModel)]="password"/>
+        <div class="error-block">
+            <div *ngIf="loginForm.controls.password.hasError('pattern')" class="error-block__error-message">
+                Поле «Пароль» может содержать, латинские буквы и цифры.
+            </div>
+        </div>
+    </div>
+    <div class="login-form__control">
+        <button class="form__button" type="submit">Log In</button>
+    </div>
+
+</form>

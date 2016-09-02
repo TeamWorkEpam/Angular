@@ -20,4 +20,5 @@ views
 bin
 bower_components
 npm-debug.log
-
+.idea
+dist

@@ -16,7 +16,6 @@ export class DurationPipe implements PipeTransform {
 @Pipe({ name: 'dateFormat' })
 export class DateFormat implements PipeTransform {
 	transform(value: string, format: string): string {
-		console.log('format', format)
-		return moment(new Date(value)).format(format);
+		return moment(value).format(format);
 	}
 }

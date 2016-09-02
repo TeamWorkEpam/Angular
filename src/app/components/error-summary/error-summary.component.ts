@@ -7,15 +7,15 @@ import { SummaryError } from './summary-error';
 		'./error-summary.css'
 	],
 	template: `
-	    <div class="error-block" *ngIf="errors?.length">
-           <div class="error-block__error-message" *ngFor="let error of errors">
+	    <div class="error-block" *ngIf="error.error">
+           <div class="error-block__error-message" >
                <i>{{error.message}}</i>
            </div>
 	    </div>
     `,
-	inputs: ['errors'],
+	inputs: ['error'],
 	encapsulation: ViewEncapsulation.None,
 })
 export class ErrorSummaryComponent {
-	errors: SummaryError[];
+	error: SummaryError[];
 }

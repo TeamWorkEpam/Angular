@@ -1,5 +1,4 @@
 var express = require('express');
-var app = express();
 var todoList = require('./courseList');
 var auth = require('./auth');
 var _ = require('lodash');
@@ -43,7 +42,8 @@ todoRouter.get('/', function (req, res) {
 });
 
 todoRouter.get('/:id', function (req, res) {
-	var todoItem = _.find(todoList, i => i.id === +req.params.id);
+	let todoItem = _.find(todoList, i => i.id === +req.params.id);
+
 	if (todoItem) {
 		res.status(200).json(todoItem);
 	} else {
@@ -55,23 +55,31 @@ todoRouter.post('/auth', function (req, res) {
 	var data = req.body;
 	var maxId = _.max(todoList.map(i => i.id));
 	if (data.login == 'q' ) {
-		var userProfile = {
+		var userInfo = {
 			id: maxId,
 			name: data.login,
-			isLogged: true
+			isLogged: true,
+			error: {}
 		};
-		res.status(201).json(userProfile);
+		res.status(201).json(userInfo);
 	} else {
-		var error = {
-			code: 25,
-			message: 'Не правильный логин или пароль',
-			error: true
+		var userInfo = {
+			id: null,
+			name: '',
+			isLogged: false,
+			error: {
+				code: 25,
+				message: 'Не правильный логин или пароль',
+				error: true
+			}
 		};
-		res.status(202).json(error)
+		res.status(202).json(userInfo)
 	}
-		var user = _.find(auth, (i) => i.name === data.login);
+		var user = _.find(auth, (i) => {
+				i.name === data.login;
+			});
 		if (user) {
-			_.assign(i, userProfile)
+			_.assign(auth, userProfile)
 		} else {
 			auth.push(userProfile);
 		}

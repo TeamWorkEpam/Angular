@@ -2,7 +2,7 @@
       [formGroup]="loginForm"
       (ngSubmit)="onSubmit()"
       class="login-form">
-    <error-summary [errors]="errors"></error-summary>
+    <error-summary [error]="error"></error-summary>
     <div class="login-form__control">
         <label class="login-form__label">Login</label>
         <input autofocus class="login-form__input" formControlName="login"

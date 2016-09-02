@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CourseService, CourseItem } from './../../services';
-import { ErrorSummaryComponent } from './../../components/error-summary';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { PageComponent } from '../../components/page.component';
@@ -13,7 +12,7 @@ import { REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
 	styleUrls: [
 		'./course-details.css'
 	],
-	directives: [ErrorSummaryComponent, REACTIVE_FORM_DIRECTIVES, CourseFormComponent],
+	directives: [REACTIVE_FORM_DIRECTIVES, CourseFormComponent],
 	templateUrl: 'course-details.html'
 })
 export class CourseDetails extends PageComponent {
@@ -67,7 +66,6 @@ export class CourseDetails extends PageComponent {
 
 	updateCourse(value) {
 		Object.assign(this.item, value);
-		console.log(this.item)
 		this._subscription(
 			this.courseService.updateCourse(this.item)
 				.subscribe(res => {

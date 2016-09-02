@@ -12,7 +12,7 @@
     "_start": "npm run start",
     "tslint": "tslint",
     "server": "npm run server:dev",
-    "server:dev": "webpack-dev-server --config config/webpack.dev.js --progress --profile --colors --watch --display-error-details --display-cached --content-base src/",
+    "server:dev": "webpack-dev-server --config config/webpack.dev.js --progress --profile --watch --content-base src/",
     "server:dev:hmr": "npm run server:dev -- --inline --hot",
     "server:prod": "http-server dist --cors",
     "test": "npm run lint",
@@ -99,13 +99,13 @@
     "url-loader": "^0.5.7",
     "webpack": "^2.1.0-beta.21",
     "webpack-dev-middleware": "^1.6.1",
-    "webpack-dev-server": "^2.1.0-beta.0",
+    "webpack-dev-server": "^2.1.0-beta.2",
     "webpack-md5-hash": "^0.0.5",
     "webpack-merge": "^0.14.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/VladSolodjankin/Angular2.git"
+    "url": "https://git.epam.com/vladislav_solodjankin/angular2.git"
   },
   "engines": {
     "node": ">= 4.2.1",

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { UserInfo } from './userInfo';
-import { Error } from './error';
 import { AppActions } from '../app.actions';
 import * as _ from 'lodash';
 
@@ -23,22 +22,15 @@ export class AuthService {
 		return this.http.post(this.apiUrl + 'auth', result)
 			.map((res) => {
 				let i = res.json();
-				if (i.error) {
-					return new Error(
-						i.code,
-						i.message,
-						i.error
-					);
-				} else {
-					return new UserInfo(
-						i.id,
-						i.name,
-						i.isLogged
-					);
-				}
+				return new UserInfo(
+					i.id,
+					i.name,
+					i.isLogged,
+					i.error
+				);
 			})
 			.subscribe((res) => {
-				let error = _.get(res, 'error', false);
+				let error = _.get(res, 'error.error', false);
 				let userName = _.get(res, 'name', '');
 				if (!error) {
 					localStorage.setItem(AuthService.LOGIN_KEY, userName);
@@ -64,7 +56,8 @@ export class AuthService {
 					return new UserInfo(
 						i.id,
 						i.name,
-						i.isLogged
+						i.isLogged,
+						i.error
 					);
 				})
 				.subscribe((res) => {

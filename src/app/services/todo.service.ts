@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
-import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import { CourseItem } from './courseItem';
 import { AppActions } from '../app.actions';
@@ -24,11 +23,12 @@ export class CourseService {
 				));
 			})
 			.subscribe(res => {
-				this.appActions.dispatch(AppActions.ITEMS_LOADED, res);
+				this.appActions.dispatch(AppActions.COURSES_LOADED, res);
 			});
 	}
 
 	getCourse(id: number) {
+		this.appActions.dispatch(AppActions.START_API_CALL);
 		return this.http.get(this.apiUrl + id)
 			.map(res => {
 				let i = res.json();
@@ -41,7 +41,7 @@ export class CourseService {
 				);
 			})
 			.subscribe(res => {
-				this.appActions.dispatch(AppActions.ITEM_LOADED, res);
+				this.appActions.dispatch(AppActions.COURSE_LOADED, res);
 			});
 	}
 
@@ -65,7 +65,6 @@ export class CourseService {
 	updateCourse(item: CourseItem) {
 		let observable = this.http.put(this.apiUrl + item.id, item);
 		observable.subscribe(res => {
-			console.log(res)
 			this.appActions.dispatch(AppActions.UPDATE_ITEM, item);
 		});
 		return observable;

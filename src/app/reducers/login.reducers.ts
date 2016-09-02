@@ -6,13 +6,15 @@ let initialState: UserInfo = {
 	id: null,
 	name: '',
 	isLogged: false,
-
+	error: {}
 };
 
 export const auth: ActionReducer<UserInfo> = (state: UserInfo = initialState, action: Action) => {
 	switch (action.type) {
 		case AppActions.LOG_IN:
-			return action.payload;
+			return Object.assign({}, action.payload);
+		case AppActions.AUTH_ERROR:
+			return Object.assign({}, action.payload);
 		case AppActions.LOG_OFF:
 			return initialState;
 		case AppActions.USER_INFO:

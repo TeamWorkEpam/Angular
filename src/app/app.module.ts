@@ -14,7 +14,7 @@ import { routing, appRoutingProviders } from './app.routes';
 import { AppActions } from './app.actions';
 import { AuthService, CourseService } from './services';
 import { LoggedInGuard } from './guards';
-import { auth, errors, items, courseDetail } from './reducers';
+import { auth, items, courseDetail } from './reducers';
 
 export const APP_PROVIDERS = [
 	AppActions,
@@ -56,7 +56,6 @@ import { HeaderComponent } from './pages/header';
 		FORM_PROVIDERS,
 		provideStore({
 			auth,
-			errors,
 			items,
 			courseDetail
 		})

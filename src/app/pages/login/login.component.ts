@@ -6,6 +6,7 @@ import { Store } from '@ngrx/store';
 import { ErrorSummaryComponent } from '../../components/error-summary';
 import { Observable } from 'rxjs';
 import { Error } from '../../services';
+import * as _ from 'lodash';
 
 @Component({
 	selector: 'login',
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit{
 	login: string = '';
 	password: string = '';
 	loginForm: FormGroup;
-	errors: Error[];
+	error: Error;
 
 	constructor(private authService: AuthService,
 	            private router: Router,
@@ -29,10 +30,11 @@ export class LoginComponent implements OnInit{
 	ngOnInit() {
 		this.loginForm = this.fb.group({});
 		Observable.combineLatest(
-			this.store.select('errors'),
+			this.store.select('auth'),
 		)
-		.subscribe(([error]) => {
-			this.errors = error as Error[];
+		.subscribe(([auth]) => {
+			let error = _.get(auth, 'error', {});
+			this.error = error as Error;
 		});
 		this.initializeForm();
 	}

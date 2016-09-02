@@ -4,7 +4,7 @@ import { AppActions } from '../app.actions';
 
 export const items: ActionReducer<CourseItem[]> = (state: CourseItem[] = [], action: Action) => {
 	switch (action.type) {
-		case AppActions.ITEMS_LOADED:
+		case AppActions.COURSES_LOADED:
 			return action.payload;
 
 		case AppActions.ADD_ITEM:

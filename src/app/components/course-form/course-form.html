@@ -44,8 +44,9 @@
             Дата
         </label>
         <input formControlName="date"
-               only-numbers
-               value="{{ item.date | dateFormat: format }}"
+               only-number
+               [(ngModel)]="item.date"
+               value="{{ item.date }}"
         />
         <div *ngIf="courseForm.controls.date.hasError('validateDate')" class="error-block__error-message">
             Неправильный формат даты {{format}}

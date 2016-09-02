@@ -15,7 +15,7 @@ import { dateFormat } from '../../../../const/const';
                    {{ item.name }}
                 </a>
                 <span class="course__duration">{{ item.duration | duratioFormat }}</span>
-                <div class="course__date">{{ item.date | dateFormat: format }}</div>
+                <div class="course__date">{{ item.date }}</div>
                 <div class="course__description">{{ item.description }}</div>
             </div>
 

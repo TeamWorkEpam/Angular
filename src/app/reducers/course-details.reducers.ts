@@ -12,8 +12,10 @@ let initialState: CourseItem = {
 
 export const courseDetail: ActionReducer<CourseItem> = (state: CourseItem = initialState, action: Action) => {
 	switch (action.type) {
-		case AppActions.ITEM_LOADED:
-			return action.payload;
+		case AppActions.START_API_CALL:
+			return Object.assign({}, state);
+		case AppActions.COURSE_LOADED:
+			return Object.assign({}, action.payload);
 		default:
 			return state;
 	}
